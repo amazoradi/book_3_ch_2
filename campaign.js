@@ -1,29 +1,6 @@
-// Her congressional district(you can use yours here)
-// Her platform statements for the following issues.
-//   Taxes
-// Jobs
-// Infrastructure
-// Health care
-// Crime and enforcement
-// URL for donation form
-// Calendar of events
-// Volunteer information
-// Name
-// Address
-// Email
-// Phone number
-// Availability
-// What activities each one is willing to do (e.g.answering phone calls, taking polls, etc.)
-// Biography
-// Image gallery
-// Head shot
-// Picture of family
-// Picture of constituents
-// Mission statement
-// URL for registering to vote
 
 let campaign = {
-  district: "Tennesee's 5th Congressional District",
+  district: "Tennesee's 5th Congressional District.",
   platformIssue: {
     taxes: "None of those!",
     jobs: "More and higher paying!",
@@ -69,4 +46,18 @@ let campaign = {
   },
   missionStatement: "Give a voice to the voiceless, defend the helpless, protect the people.",
   registration: "https://ovr.govote.tn.gov/"
+}
+
+// functions
+
+function appendDistrict (fact) {
+  campaign.district += fact;
+};
+
+appendDistrict(" The Best district in the World!");
+console.log(campaign.district);
+
+
+function newIssues () {
+  
 }
