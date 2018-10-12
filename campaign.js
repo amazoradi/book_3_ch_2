@@ -1,29 +1,6 @@
-// Her congressional district(you can use yours here)
-// Her platform statements for the following issues.
-//   Taxes
-// Jobs
-// Infrastructure
-// Health care
-// Crime and enforcement
-// URL for donation form
-// Calendar of events
-// Volunteer information
-// Name
-// Address
-// Email
-// Phone number
-// Availability
-// What activities each one is willing to do (e.g.answering phone calls, taking polls, etc.)
-// Biography
-// Image gallery
-// Head shot
-// Picture of family
-// Picture of constituents
-// Mission statement
-// URL for registering to vote
-
+// The object
 let campaign = {
-  district: "Tennesee's 5th Congressional District",
+  district: "Tennesee's 5th Congressional District.",
   platformIssue: {
     taxes: "None of those!",
     jobs: "More and higher paying!",
@@ -32,13 +9,27 @@ let campaign = {
     crimeEnforcement: "Jail for serious offenders not minor offenders"
   },
   donationLink: "https://www.linkedin.com/in/austin-malde-zoradi-516864b1/",
-  calendar: {
-    october14: "Envelope stuffing.",
-    october21: "Door to door canvasing.",
-    october22: "Cold calls.",
-    october30: "Puppy give-away.",
-    November4: "Name sign planting."
+  calendar: [{
+    event: "Envelope stuffing.",
+    date: "October 14"
   },
+  {
+    event: "Door to door canvasing.",
+    date: "October 21"
+  },
+  {
+    event: "Cold calls.",
+    date: "October 22"
+  },
+  {
+    event: "Name sign planting.",
+    date: "Novemeber 4"
+  },
+  {
+    event: "Puppy give-away.",
+    date: "October 30"
+  }]
+  ,
   volunteerInfo: [{
     name: "Ausitn",
     Address: "123 Fake Street",
@@ -70,3 +61,75 @@ let campaign = {
   missionStatement: "Give a voice to the voiceless, defend the helpless, protect the people.",
   registration: "https://ovr.govote.tn.gov/"
 }
+
+// functions
+
+function appendDistrict(fact) {
+  campaign.district += fact;
+};
+appendDistrict(" The Best district in the World!");
+
+
+function newIssues(topic, value) {
+  campaign.platformIssue[topic] = value;
+};
+newIssues("Guns", "None.");
+
+
+let donationUpdate = (udatePerecent) => {
+  campaign.donationLink += ". Our goal is " + udatePerecent + " complete!";
+};
+donationUpdate("90%");
+
+
+function newEvent(event, day) {
+  let anotherEvent = { "event": event, "date": day }
+  campaign.calendar.push(anotherEvent);
+};
+
+newEvent("Meet and greet", "Novemeber 1");
+
+function compare(a, b) {
+  if (a.date < b.date)
+    return -1;
+  if (a.date > b.date)
+    return 1;
+  return 0;
+}
+campaign.calendar.sort(compare);
+
+
+
+function newMeat (name, address, email, phone, availability,activities) {
+  let volunteerSignUp = {"name":name, "address":address, "email":email, "phone":phone, "availability":availability, "activities":activities};
+  campaign.volunteerInfo.push(volunteerSignUp);
+  };
+newMeat("sam", "lame st", "haha@email.com", 99999999, "never", "many things");
+
+
+function moreBio (info) {
+  campaign.biography += info;
+};
+
+moreBio (" One day all you serfs will bow down! Muwhahaha!");
+
+
+function addImage (title, link) {
+  campaign.imageGallery[title] = link;
+};
+
+ addImage("side passion","https://github.com/nashville-software-school/client-side-mastery/blob/master/book-3-the-neophyte/chapters/JS_FUNCTION_BASICS.md");
+
+ function moreMission (statement) {
+   campaign.missionStatement += statement;
+ };
+
+ moreMission(" WORLD DOMINATION!");
+ 
+ function register (words) {
+   campaign.registration += words;
+ };
+
+ register(". Vote for me or else!")
+ 
+
