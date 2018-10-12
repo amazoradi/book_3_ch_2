@@ -1,4 +1,4 @@
-
+// The object
 let campaign = {
   district: "Tennesee's 5th Congressional District.",
   platformIssue: {
@@ -55,9 +55,10 @@ function appendDistrict (fact) {
 };
 
 appendDistrict(" The Best district in the World!");
-console.log(campaign.district);
 
-
-function newIssues () {
   
+function newIssues (topic, value) {
+  campaign.platformIssue[topic] = value;
 }
+
+newIssues("Guns", "None.");
