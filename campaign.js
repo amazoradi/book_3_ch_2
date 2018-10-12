@@ -56,9 +56,15 @@ function appendDistrict (fact) {
 
 appendDistrict(" The Best district in the World!");
 
-  
+
 function newIssues (topic, value) {
   campaign.platformIssue[topic] = value;
 }
 
 newIssues("Guns", "None.");
+
+let donationUpdate = (udatePerecent) => {
+  campaign.donationLink += ". Our goal is " + udatePerecent + " complete!";
+}
+
+donationUpdate("90%");
